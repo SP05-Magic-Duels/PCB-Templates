@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ISM330ISTR")(type "KiCad")(uri "${KIPRJMOD}/imports/symbols/ISM330ISTR.kicad_sym")(options "")(descr ""))
+)

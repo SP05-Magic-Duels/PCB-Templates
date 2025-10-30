@@ -1,0 +1,3 @@
+[submodule "pcb-template-project/PCB-Imports"]
+	path = pcb-template-project/PCB-Imports
+	url = git@github.com:SP05-Magic-Duels/PCB-Imports.git

@@ -1,0 +1,44 @@
+# Reference: https://www.baeldung.com/ops/github-actions-pr-files-modified
+# Reference: Google Gemini
+
+name: Auto-Create PR for PCB Imports
+
+on:
+  push:
+    # Trigger on any branch push, but ignore the main branch
+    branches-ignore:
+      - main
+    # Only run if the push includes changes in the 'imports' folder
+    paths:
+      - 'imports/**'
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    # Give the job explicit write permissions to create the PR
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Create Pull Request
+        # This action handles staging, committing, pushing a new branch, and opening the PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          # The token used to create the PR (GITHUB_TOKEN is sufficient for same-repo PRs)
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # The branch to merge the new changes INTO
+          base: main
+          # The branch name for the new changes
+          branch: auto/update-${{ github.ref_name }}
+          # The commit message for the automated changes
+          commit-message: 'chore(special-folder): Automated update triggered by ${{ github.ref_name }}'
+          # Path filter: Only include changes within this directory
+          add-paths: imports/**
+          title: '[AUTO] Update files in imports/'
+          body: |
+            This PR contains automatically generated changes to the `imports/` 
+            triggered by a push to the `${{ github.ref_name }}` branch.

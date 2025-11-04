@@ -10,7 +10,7 @@ on:
       - main
     # Only run if the push includes changes in the 'imports' folder
     paths:
-      - 'imports/**'
+      - 'PCB-Imports/**'
 
 jobs:
   create-pr:
@@ -38,7 +38,7 @@ jobs:
           commit-message: 'chore(special-folder): Automated update triggered by ${{ github.ref_name }}'
           # Path filter: Only include changes within this directory
           add-paths: imports/**
-          title: '[AUTO] Update files in imports/'
+          title: '[AUTO] Update files in PCB-Imports/'
           body: |
-            This PR contains automatically generated changes to the `imports/` 
+            This PR contains automatically generated changes to the `PCB-Imports/` 
             triggered by a push to the `${{ github.ref_name }}` branch.

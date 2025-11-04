@@ -1,5 +1,6 @@
 (fp_lib_table
   (version 7)
-  (lib (name "ISM330ISTR")(type "KiCad")(uri "${KIPRJMOD}/imports/footprints/ISM330ISTR.pretty")(options "")(descr ""))
-  (lib (name "proj-spec-3d-models")(type "KiCad")(uri "${KIPRJMOD}/imports/3d-models")(options "")(descr ""))
+  (lib (name "proj-spec-3d-models")(type "KiCad")(uri "${KIPRJMOD}/PCB-Imports/3d-models")(options "")(descr ""))
+  (lib (name "ISM330ISTR")(type "KiCad")(uri "${KIPRJMOD}/PCB-Imports/footprints/ISM330ISTR.pretty")(options "")(descr ""))
+  (lib (name "ESP32-POE")(type "KiCad")(uri "${KIPRJMOD}/PCB-Imports/footprints/ESP32-POE.pretty")(options "")(descr ""))
 )

@@ -14,4 +14,3 @@ In the base template folder (i.e. PCB-Templates/)
 ```
 source scripts/setup.sh
 ```
-

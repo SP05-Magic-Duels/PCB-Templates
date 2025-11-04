@@ -37,7 +37,7 @@ jobs:
           # The commit message for the automated changes
           commit-message: 'chore(special-folder): Automated update triggered by ${{ github.ref_name }}'
           # Path filter: Only include changes within this directory
-          add-paths: imports/**
+          add-paths: PCB-Imports/**
           title: '[AUTO] Update files in PCB-Imports/'
           body: |
             This PR contains automatically generated changes to the `PCB-Imports/` 

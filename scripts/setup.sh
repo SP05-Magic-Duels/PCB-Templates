@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Create the necessary directories
-mkdir -p .githooks scripts
+mkdir -p .githooks
 
 # 2. Save the hook launcher file
 # Copying the content of the post-merge hook into the target file
@@ -29,6 +29,6 @@ echo "--- Creating Executable Permissions ---"
 # ⚠️ NOTE: I'm updating the Python script name below based on our previous discussion
 # (scripts/sync_kicad_libs.py) but you used 'scripts/update_pcb_imports.py'
 # I'll stick to 'scripts/sync_kicad_libs.py' for consistency with the hook content.
-chmod +x .githooks/post-merge scripts/update_pcb_imports.py install_hooks.sh
+chmod +x .githooks/post-merge scripts/update_pcb_imports.py scripts/install_hooks.sh
 
 echo "✅ All three files are now executable."
